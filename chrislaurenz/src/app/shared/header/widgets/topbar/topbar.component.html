@@ -1,0 +1,56 @@
+<div class="row" >
+    <div class="col-lg-6">
+      <div class="header-contact">
+        <ul>
+          <li>{{ 'topbar-title' | translate }}</li>
+          <li><i class="fa fa-phone" aria-hidden="true"></i><a [routerLink]="'/contact'">{{ 'our-contact' | translate }}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-6 text-right" *ngIf="!productsService?.catalogMode">
+      <ul class="header-dropdown">
+        <li class="compare">
+          <a [routerLink]="'/compare'"><i class="fa fa-random" aria-hidden="true"></i>{{ 'compare' | translate }}</a>
+        </li>
+        <li class="mobile-wishlist">
+          <a [routerLink]="'/wishlist'"><i class="fa fa-heart" aria-hidden="true"></i>{{ 'wishlist' | translate }}</a>
+        </li>
+        <li class="onhover-dropdown mobile-account">
+          <ng-template [ngIf]="!isLoggedIn">
+            <i class="fa fa-user" aria-hidden="true"></i> {{ 'my-account' | translate }}
+          </ng-template>
+          <ng-template [ngIf]="isLoggedIn">
+            <i class="fa fa-user" aria-hidden="true"></i> Hi {{firstname}}
+          </ng-template>
+
+          <ul class="onhover-show-div">
+            <li *ngIf="!isLoggedIn" >
+              <a [routerLink]="'/login'" data-lng="en">
+                  {{ 'login' | translate }}
+              </a>
+            </li>
+            <li *ngIf="!isLoggedIn" >
+              <a [routerLink]="'/signup'" data-lng="en">
+                  {{ 'register' | translate }}
+              </a>
+            </li>
+            <li *ngIf="isLoggedIn">
+              <a [routerLink]="'/dashboard'" data-lng="es">
+                {{ 'dashboard' | translate }}
+              </a>
+            </li>
+            <li *ngIf="isLoggedIn">
+              <a (click)="logout()" data-lng="es">
+                  {{ 'logout' | translate }}
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+</div>
+
+
+
+
+

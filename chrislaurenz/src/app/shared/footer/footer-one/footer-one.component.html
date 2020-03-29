@@ -1,0 +1,87 @@
+<!--footer section -->
+<footer class="footer-light">
+	<div class="light-layout">
+		<div class="container">
+			<section class="small-section border-section border-top-0">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="subscribe">
+							<div>
+								<h4>{{ 'newsletter-shortDetails' | translate}}</h4>
+								<p>{{ 'newsletter-description' | translate}}</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<form class="form-inline subscribe-form" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+							<div class="form-group mx-sm-3">
+								<input type="email" class="form-control" id="email" name="email" placeholder="{{'email' | translate}}" [(ngModel)]="form.email" #email="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">		
+							</div>
+							<button type="submit" class="btn btn-solid">{{ 'subscribe' | translate}}</button>
+							<div *ngIf="(f.submitted && email.invalid) || email.errors?.pattern">
+								<div class="text text-danger">{{'email-required' | translate}}</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+	<section class="section-b-space light-layout">
+		<div class="container">
+			<div class="row footer-theme partition-f">
+				<div class="col-lg-4 col-md-6">
+					<div class="footer-title footer-mobile-title">
+						<h4>{{'about' | translate}}</h4>
+					</div>
+					<div class="footer-contant">
+						<div class="footer-logo">
+							<img src="assets/images/icon/logo.png" alt="ChrisLaurenz" width="200">
+						</div>
+						<app-information></app-information>
+						<app-social></app-social>
+					</div>
+				</div>
+				<div class="col offset-xl-1">
+					<div class="sub-title">
+						<app-categories [productCategories]="productCategories"></app-categories>
+					</div>
+				</div>
+				<div class="col">
+					<div class="sub-title">
+						<app-why-we-choose></app-why-we-choose>
+					</div>
+				</div>
+				<div class="col">
+					<div class="sub-title">
+						<div class="footer-title">
+						    <h4>{{'store-info' | translate}}</h4>
+						</div>
+						<div class="footer-contant">
+						    <ul class="contact-list">
+						        <li><i class="fa fa-map-marker"></i>ChrisLaurenz Store,
+						            Berlin 12051</li>
+						        <li><i class="fa fa-phone"></i>{{ 'call-us' | translate }}: 123-456-7898</li>
+						        <li><i class="fa fa-envelope-o"></i>{{ 'email-us' | translate }}: <a href="mailto:Support@chrislaurenz.de">Support@chrislaurenz.de</a></li>
+						        <li><i class="fa fa-fax"></i>Fax: 123456</li>
+						    </ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="sub-footer">
+		<div class="container">
+			<app-copyright></app-copyright>
+		</div>
+	</div>
+</footer>
+<!--footer section end -->
+  <!-- Rtl start -->
+<!-- <div class="rtl-btn" id="">
+    <a href="javascript:void(0)" class="RTL_cls">
+        RTL
+    </a>
+</div> -->
+<!-- rtl end -->

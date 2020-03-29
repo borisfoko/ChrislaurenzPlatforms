@@ -1,0 +1,7 @@
+{
+    "/api/*": {
+        "target": "https://api.chrislaurenz.de",
+        "secure": true,
+        "logLevel": "debug"
+    }
+}

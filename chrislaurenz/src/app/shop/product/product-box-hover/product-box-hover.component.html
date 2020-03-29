@@ -1,0 +1,32 @@
+<div class="img-wrapper">
+    <div class="ribbon" *ngIf='product.new'><span>{{'new' | translate}}</span></div>
+    <div class="front">
+        <a [routerLink]="['/product', product.id]"><img [src]="product.pictures[0]" class="img-fluid" alt=""></a>
+    </div>
+    <div class="cart-info cart-wrap" *ngIf="!productsService?.catalogMode">
+        <a [routerLink]="" (click)="addToWishlist(product)" title="Add to Wishlist">
+        	<i class="fa fa-heart" aria-hidden="true"></i>
+        </a>
+        <button  title="{{'cart-add' | translate}}" [attr.data-target]="'#addtocart'+product.id" data-toggle="modal" (click)="addToCart(product)">
+        	<i class="ti-shopping-cart"></i> {{'cart-add' | translate}}
+        </button>
+        <a [routerLink]="['/compare']" (click)="addToCompare(product)" title="{{'compare' | translate}}">
+        	<i class="fa fa-refresh" aria-hidden="true"></i>
+        </a>
+        <a  [routerLink]="" [attr.data-target]="'#quick-view'+product.id" data-toggle="modal" class="mobile-quick-view" title="{{'quick-view' | translate}}">
+        	<i class="ti-search" aria-hidden="true"></i>
+        </a>
+    </div>
+    <div class="quick-view-part">
+        <a [routerLink]="" [attr.data-target]="'#quick-view'+product.id" data-toggle="modal" title="{{'quick-view' | translate}}">
+        	<i class="ti-search" aria-hidden="true"></i>
+        </a>
+    </div>
+</div>
+<div class="product-info">
+    <bar-rating [rate]="5" [readOnly]="true"></bar-rating>
+    <a [routerLink]="['/product', product.id]">
+    	<h6>{{productsService.getCurrentTranslation(product.name)}}</h6>
+    </a>
+    <h4 *ngIf="!productsService?.catalogMode">{{product.price | currency:productsService?.currency:'symbol'}}</h4>
+</div>

@@ -1,0 +1,21 @@
+<!-- collection banner -->
+<section class="pb-0">
+  <div class="container">
+    <div class="row partition2">
+      <div class="col-md-6" style="margin-bottom: 10px" *ngFor="let pct of productsCategoryies  | orderBy:'asc' | slice:0:4 ">
+        <a [routerLink]="['/collection', productsService.getCurrentTranslation(pct.name)]">
+          <div class="collection-banner p-right text-center">
+            <img [src]="pct.sub_banner_picture" class="img-fluid" alt="">
+            <div class="contain-banner">
+              <div>
+                <h4 *ngIf="pct?.save">{{'promotion-save' | translate}} {{ pct?.save }}%</h4>
+                <h2>{{ productsService.getCurrentTranslation(pct.name) }}</h2>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- collection banner end -->

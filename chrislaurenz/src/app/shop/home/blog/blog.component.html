@@ -1,0 +1,36 @@
+<!-- blog section start-->
+<section class="blog p-t-0">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="title1 section-t-space">
+          <h4>{{ 'recent-story' | translate }}</h4>
+          <h2 class="title-inner1">{{ 'from-blog' | translate }}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+          <ngx-slick-carousel class="no-arrow" #slickModal="slick-carousel" [config]="blogSlideConfig">
+          <div class="col-md-12" ngxSlickItem *ngFor="let bg of blogs">
+            <a [routerLink]="'/blog/details'">
+              <div class="classic-effect">
+                <img [src]="bg.image" class="img-fluid" alt="">
+                <span></span>
+              </div>
+            </a>
+            <div class="blog-details">
+              <h4>{{ bg.creation_timestamp  | date }}</h4>
+              <a [routerLink]="'/blog/details'">
+                <p>{{ bg.title }}</p>
+              </a>
+              <hr class="style1">
+              <h6>{{ 'by' | translate }}: {{ bg.user.first_name }} {{ bg.user.last_name }} , {{ bg.posts.length }} {{ 'comment' | translate }}</h6>
+            </div>
+          </div>
+        </ngx-slick-carousel>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- blog section end -->

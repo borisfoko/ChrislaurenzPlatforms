@@ -1,0 +1,81 @@
+<div class="page-title">
+    <h2>{{'my-order' | translate}}</h2>
+</div>
+
+<!-- section start -->
+<section class="section-b-space">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card" *ngFor="let customerOrder of customer.customer_orders">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col">
+                                <p>{{'ordered-at'|translate}}:</p>
+                                <p style="margin-top: 0px; margin-bottom: 0px;">{{customerOrder?.date | date}}</p>
+                            </div>
+                            <div class="col">
+                                <p>{{'status'|translate}}:</p>
+                                <p style="margin-top: 0px; margin-bottom: 0px;"  [ngSwitch]="customerOrder?.status">
+                                    <ng-container *ngSwitchCase="'pending'">
+                                        <a [routerLink]="" class="badge badge-pill badge-info">{{'pending'|translate}}</a>
+                                    </ng-container>
+                                    <ng-container *ngSwitchCase="'done'">
+                                        <a [routerLink]="" class="badge badge-pill badge-success">{{'done'|translate}}</a>
+                                    </ng-container>
+                                    <ng-container *ngSwitchCase="'canceled'">
+                                        <a [routerLink]="" class="badge badge-pill badge-danger">{{'canceled'|translate}}</a>
+                                    </ng-container>
+                                </p>
+                            </div>
+                            <div class="col">
+                                <p>{{'address-shipping'|translate}}:</p>
+                                <a style="margin-top: 0px; margin-bottom: 0px;" [routerLink]="" (click)="gotoAddress()">{{customer?.delivery_address?.street_name}}</a>
+                            </div>
+                            <div class="col">
+                                <p>{{'order-number'|translate}}:</p>
+                                <a style="margin-top: 0px; margin-bottom: 0px;" [routerLink]="['/dashborad/customer/order', customerOrder.id]">{{'order-detail'|translate}}</a>
+                            </div>
+                            <div class="col">
+                                <p>{{'invoice'|translate}}:</p>
+                                <a style="margin-top: 0px; margin-bottom: 0px;" [routerLink]="['/dashborad/customer/order/invoice', customerOrder?.customer_order_invoice?.number]">{{'invoice-detail'|translate}}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <div class="media" style="margin-bottom: 10px;" *ngFor="let product of customerOrder?.Products">
+                                    <img style="width: 30%;" class="align-self-start mr-3" [src]="product?.product_picture_miniature" alt="">
+                                    <div class="media-body">
+                                        <h5 class="mt-0">{{productsService.getCurrentTranslation(product?.name)}}</h5>
+                                        {{'number'|translate}}: {{product?.number}}
+                                        <p class="card-text">{{productsService.getCurrentTranslation(product?.short_details)}}</p>
+                                        <p class="card-text">{{'price'|translate}}: <span class="text-danger">{{product?.sale_price | currency:productsService?.currency:'symbol'}}</span> X {{product?.product_has_customer_order?.product_order_quantity}}</p>
+                                        <a [routerLink]="['/product', product.id]" class="btn btn-solid">{{'order-again'|translate}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col" style="text-align: right;">
+                                <p>
+                                    <a [routerLink]="" class="btn btn-outline-secondary">{{'problem-with-order'|translate}}</a>
+                                </p>
+                                <p>
+                                    <a [routerLink]="" class="btn btn-outline-secondary">{{'write-review'|translate}}</a>
+                                </p>
+                                <p>
+                                    <a [routerLink]="" class="btn btn-outline-secondary">{{'return'|translate}}</a>
+                                </p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="card-footer text-muted">
+                        <p class="card-text">{{'total-price'|translate}}: <span class="text-danger">{{customerOrder?.total_price | currency:productsService?.currency:'symbol'}}</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Section ends-->

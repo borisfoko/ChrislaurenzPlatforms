@@ -1,0 +1,258 @@
+<!-- breadcrumb start -->
+<div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="page-title">
+                    <h2>{{'checkout'|translate}}</h2>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a [routerLink]="'/'">{{'home'|translate}}</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{'checkout'|translate}}</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb End -->
+<section class="section-b-space">
+    <div class="container padding-cls">
+        <div class="checkout-page">
+            <div class="checkout-form">
+                <form>
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-12 col-xs-12">
+                            <div class="checkout-title">
+                                <h3>{{'billing-details'|translate}}</h3>
+                            </div>
+                            <div class="row check-out">
+                                <div class="form-group col-md-4 col-sm-4 col-xs-6">
+                                    <div class="field-label">{{'first-name'|translate}}</div>
+                                    <input type="text" name="firstname" [formControl]="checkoutForm.controls['firstname']" value="" placeholder="{{'first-name'|translate}}" autocomplete="off">
+                                    <div *ngIf="checkoutForm.controls.firstname.touched && checkoutForm.controls.firstname.errors?.required" class="text text-danger">
+                                        {{'first-name'|translate}} {{'is-required'|translate}}
+                                    </div>
+                                    <div *ngIf="checkoutForm.controls.firstname.touched && checkoutForm.controls.firstname.errors?.pattern" class="text text-danger">
+                                        {{'first-name'|translate}} {{'must-be-aphabetes'|translate}}
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-4 col-sm-4 col-xs-6">
+                                    <div class="field-label">{{'middle-name'|translate}}</div>
+                                    <input type="text" name="middlename" [formControl]="checkoutForm.controls['middlename']" value="" placeholder="{{'middle-name'|translate}}" autocomplete="off">
+                                    <div *ngIf="checkoutForm.controls.middlename.touched && checkoutForm.controls.middlename.errors?.required" class="text text-danger">
+                                        {{'middle-name' | translate}} {{'is-required'|translate}}
+                                    </div>
+                                    <div *ngIf="checkoutForm.controls.middlename.touched && checkoutForm.controls.middlename.errors?.pattern" class="text text-danger">
+                                        {{'middle-name' | translate}} {{'must-be-aphabetes'|translate}}
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-4 col-sm-4 col-xs-6">
+                                    <div class="field-label">{{'last-name'|translate}}</div>
+                                    <input type="text" name="lastname" [formControl]="checkoutForm.controls['lastname']" value="" placeholder="{{'last-name'|translate}}" autocomplete="off">
+                                    <div *ngIf="checkoutForm.controls.lastname.touched && checkoutForm.controls.lastname.errors?.required" class="text text-danger">
+                                        {{'last-name'|translate}} {{'is-required'|translate}}
+                                    </div>
+                                    <div *ngIf="checkoutForm.controls.lastname.touched && checkoutForm.controls.lastname.errors?.pattern" class="text text-danger">
+                                        {{'last-name'|translate}} {{'must-be-aphabetes'|translate}}
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                    <div class="field-label">{{'birth-date'|translate}}</div>
+                                    <input type="date" class="form-control" name="birthday" [formControl]="checkoutForm.controls['birthday']" value="" placeholder="{{'birth-date'|translate}}" required>
+                                    <div *ngIf="checkoutForm.controls.birthday.touched && checkoutForm.controls.birthday.errors?.required" class="text text-danger">
+                                        {{'birth-date-required' | translate}}
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                    <div class="field-label">{{'phone-number' | translate}}</div>
+                                    <input type="text" name="phone" [formControl]="checkoutForm.controls['phone']" value="" placeholder="{{'phone-number' | translate}}" autocomplete="off">
+                                    <div *ngIf="checkoutForm.controls.phone.touched && checkoutForm.controls.phone.errors?.required" class="text text-danger">
+                                        {{'phone-number' | translate}} {{'is-required'|translate}}
+                                    </div>
+                                    <div *ngIf="checkoutForm.controls.phone.touched && checkoutForm.controls.phone.errors?.pattern" class="text text-danger">
+                                      {{'phone-number' | translate}} {{'must-be-number'|translate}}
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                    <div class="field-label">{{'email'|translate}}</div>
+                                    <input type="text" name="email" [formControl]="checkoutForm.controls['email']" value="" placeholder="{{'email-placeholder'|translate}}" autocomplete="off">
+                                    <div *ngIf="checkoutForm.controls.email.touched && checkoutForm.controls.email.errors?.required" class="text text-danger">
+                                        {{'email-required' | translate}}
+                                    </div>
+                                    <div *ngIf="checkoutForm.controls.email.touched && checkoutForm.controls.email.errors?.email" class="text text-danger">
+                                        {{'email-required' | translate}}
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                    <div class="field-label">{{'country'|translate}}</div>
+                                    <select name="country" [formControl]="checkoutForm.controls['country']">
+                                        <option value="" selected>{{'select-country'|translate}}</option>
+                                        <option value="andorra">{{'andorra'|translate}}</option>
+                                        <option value="autriche">{{'austria'|translate}}</option>
+                                        <option value="belgium">{{'belgium'|translate}}</option>
+                                        <option value="cyprus">{{'cyprus'|translate}}</option>
+                                        <option value="cameroon">{{'cameroon'|translate}}</option>
+                                        <option value="estonia">{{'estonia'|translate}}</option>
+                                        <option value="finland">{{'finland'|translate}}</option>
+                                        <option value="france">{{'france'|translate}}</option>
+                                        <option value="germany">{{'germany'|translate}}</option>
+                                        <option value="greece">{{'greece'|translate}}</option>
+                                        <option value="ireland">{{'ireland'|translate}}</option>
+                                        <option value="italy">{{'italy'|translate}}</option>
+                                        <option value="latvia">{{'latvia'|translate}}</option>
+                                        <option value="spain">{{'spain'|translate}}</option>
+                                        <option value="norway">{{'norway'|translate}}</option>
+                                        <option value="poland">{{'poland'|translate}}</option>
+                                        <option value="uk">{{'uk'|translate}}</option>
+                                        <option value="usa">{{'usa'|translate}}</option>
+                                        <option value="romania">{{'romania'|translate}}</option>
+                                        <option value="switzerland">{{'switzerland'|translate}}</option>
+                                        <option value="turkey">{{'turkey'|translate}}</option>
+                                        <option value="tunesia">{{'tunesia'|translate}}</option>
+                                        <option value="algeria">{{'algeria'|translate}}</option>
+                                        <option value="poland">{{'poland'|translate}}</option>
+                                    </select>
+                                    <div *ngIf="checkoutForm.controls.country.touched && checkoutForm.controls.country.errors?.required" class="text text-danger">
+                                        {{'country'|translate}} {{'is-required'|translate}}
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                    <div class="field-label">{{'street'|translate}} - {{'street-number'|translate}}</div>
+                                    <input type="text" name="address" [formControl]="checkoutForm.controls['address']" value="" placeholder="{{'street'|translate}}" autocomplete="off">
+                                    <div *ngIf="checkoutForm.controls.address.touched && checkoutForm.controls.address.errors?.required" class="text text-danger">
+                                        {{'street'|translate}} - {{'street-number'|translate}} {{'is-required'|translate}}
+                                    </div>
+                                    <div *ngIf="checkoutForm.controls.address.touched && checkoutForm.controls.address.errors?.maxlength" class="text text-danger">
+                                        {{'maximum-lenght'|translate}}
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                    <div class="field-label">{{'city'|translate}}</div>
+                                    <input type="text" name="town" [formControl]="checkoutForm.controls['town']" value="" placeholder="{{'city'|translate}}" autocomplete="off">
+                                     <div *ngIf="checkoutForm.controls.town.touched && checkoutForm.controls.town.errors?.required" class="text text-danger">
+                                        {{'city'|translate}} {{'is-required'|translate}}
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12 col-sm-6 col-xs-12">
+                                    <div class="field-label">{{'state'|translate}}</div>
+                                    <input type="text" name="state" [formControl]="checkoutForm.controls['state']" value="" placeholder="{{'state'|translate}}" autocomplete="off">
+                                     <div *ngIf="checkoutForm.controls.state.touched && checkoutForm.controls.state.errors?.required" class="text text-danger">
+                                        {{'state'|translate}} {{'is-required'|translate}}
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12 col-sm-6 col-xs-12">
+                                    <div class="field-label">{{'post-code'|translate}}</div>
+                                    <input type="text" name="postalcode" [formControl]="checkoutForm.controls['postalcode']" value="" placeholder="{{'post-code'|translate}}" autocomplete="off">
+                                    <div *ngIf="checkoutForm.controls.postalcode.touched && checkoutForm.controls.postalcode.errors?.required" class="text text-danger">
+                                        {{'post-code'|translate}} {{'is-required'|translate}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row margin-cls">
+                                <div class="col-12">
+                                <!-- <div class="stripe-section">
+                                    <h5>paypal</h5>
+                                    <div class="content">
+                                    <h5>dummy test</h5>
+                                    <table>
+                                        <tr>
+                                        <td>cart number</td>
+                                        <td>4152521541244</td>
+                                        </tr>
+                                        <tr>
+                                        <td>mm/yy</td>
+                                        <td>11/18</td>
+                                        </tr>
+                                        <tr>
+                                        <td>cvc</td>
+                                        <td>521</td>
+                                        </tr>
+                                    </table>
+                                    </div>
+                                </div> -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-12 col-xs-12">
+                            <div class="checkout-details">
+                                <div class="order-box">
+                                    <div class="title-box">
+                                        <div>{{'products'|translate}} <span> {{'total'|translate}}</span></div>
+                                    </div>
+                                    <ul class="qty" *ngIf='checkOutItems.length'>
+                                        <li *ngFor="let item of checkOutItems">
+                                        	 {{ productsService.getCurrentTranslation(item.product.name) }} × {{ item.quantity }}
+                                        	<span>
+                                        	 {{ item.product.price * item.quantity | currency:productsService?.currency:'symbol' }}
+                                            </span>
+                                        </li>
+                                    </ul>
+                                    <ul class="qty" *ngIf='!checkOutItems.length'>
+                                     <li class="empty-checkout"> {{'no-product'|translate}} </li>
+                                    </ul>
+                                    <ul class="sub-total">
+                                        <li>
+                                        	{{'sub-total'|translate}} <span class="count">{{ getTotal() | async | currency:productsService?.currency:'symbol'}}</span>
+                                        </li>
+                                        <li *ngIf='checkOutItems.length'>
+                                        	{{'shipping'|translate}}
+                                         <div class="shipping">
+                                            <div class="shopping-option">
+                                                <input type="radio" name="shipping" checked="checked" id="free-shipping">
+                                                <label for="free-shipping">Shipping</label>
+                                            </div>
+                                            <div class="shopping-option">
+                                                <input type="radio"  name="shipping" id="local-pickup">
+                                                <label for="local-pickup">Local Pickup</label>
+                                            </div>
+                                         </div>
+                                        </li>
+                                    </ul>
+                                    <ul class="total">
+                                        <li>{{'total-price'|translate}} <span class="count">{{ getTotal() | async | currency:productsService?.currency:'symbol'}}</span></li>
+                                    </ul>
+                                </div>
+
+                                <div class="payment-box" *ngIf='checkOutItems.length'>
+                                    <div class="upper-box">
+                                        <div class="payment-options">
+                                            <ul>
+                                                <li>
+                                                    <div class="radio-option">
+                                                        <input type="radio" [(ngModel)]="payment" [value]="false"  name="payment-group" id="payment-2">
+                                                        <label for="payment-2">Stripe
+                                                            <span class="small-text">Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</span></label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="radio-option paypal">
+                                                        <input type="radio" [(ngModel)]="payment" [value]="true" name="payment-group" id="payment-3">
+                                                        <label for="payment-3">PayPal<span class="image"><img src="assets/images/paypal.png" alt="" /></span></label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <button class="btn-solid btn" [disabled]="!checkoutForm.valid" (click)="stripeCheckout()" type="submit"
+                                        *ngIf="!payment">
+                                           {{'place-order'|translate}}
+                                        </button>
+                                        <ngx-paypal [config]="payPalConfig" [ngClass]="{'btn disabled': !checkoutForm.valid}" *ngIf="payment">
+                                        </ngx-paypal>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

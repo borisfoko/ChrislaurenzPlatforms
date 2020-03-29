@@ -1,0 +1,153 @@
+<!-- breadcrumb start -->
+<div class="breadcrumb-section">
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-6">
+              <div class="page-title">
+                  <h2>{{'create-account' | translate}}</h2>
+              </div>
+          </div>
+          <div class="col-sm-6">
+              <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                  <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a [routerLink]="'/'">{{'home' | translate}}</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">{{'create-account' | translate}}</li>
+                  </ol>
+              </nav>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- breadcrumb End -->
+
+<div class="register-page section-b-space" *ngIf="isSignedUp; else ShowSignUpForm">
+  <div class="container">
+    <div class="col-lg-12">
+      <div class="row">
+        <div class="theme-card">
+          <div class="alert alert-success">
+            <strong>{{'register-success-title' | translate}}</strong>
+          </div>
+          <h6 class="title-font">{{'register-success' | translate}}{{signupInfo.email}}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #ShowSignUpForm>
+    <!-- section start -->
+    <section class="register-page section-b-space">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12">
+                  <h3>{{'create-account' | translate}}</h3>
+                  <div class="theme-card">
+                      <form class="theme-form" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                          <div class="form-row">
+                              <div class="col-sm">
+                                  <label for="firstname">{{'first-name' | translate}}</label>
+                                  <input type="text" class="form-control" id="firstname" name ="firstname" [(ngModel)]="form.firstname" #firstname="ngModel" placeholder="{{'first-name' | translate}}" required pattern="[a-zA-Z][a-zA-Z ]+[a-zA-Z]$">
+                                  <div *ngIf="firstname.touched || f.submitted" class="text text-danger">
+                                    <ng-template [ngIf]="firstname.errors?.required">
+                                      {{'first-name-required' | translate}}
+                                    </ng-template>
+                                    <ng-template [ngIf]="firstname.errors?.pattern">
+                                      {{'first-name' | translate}} {{'must-be-aphabetes' | translate}}
+                                    </ng-template>
+                                  </div>
+                              </div>
+                              <div class="col-sm">
+                                  <label for="middlename">{{'middle-name' | translate}}</label>
+                                  <input type="text" class="form-control" id="middlename" name ="middlename" [(ngModel)]="form.middlename" #middlename="ngModel" placeholder="{{'middle-name' | translate}}" pattern="[a-zA-Z][a-zA-Z ]+[a-zA-Z]$">
+                                  <div *ngIf="(middlename.touched || f.submitted) && middlename.errors?.pattern" class="text text-danger">
+                                    {{'middle-name' | translate}} {{'must-be-aphabetes' | translate}}
+                                  </div>
+                              </div>
+                              <div class="col-sm">
+                                  <label for="lastname">{{'last-name' | translate}}</label>
+                                  <input type="text" class="form-control" id="lastname" name ="middlename" [(ngModel)]="form.lastname" #lastname="ngModel" placeholder="{{'last-name' | translate}}" required pattern="[a-zA-Z][a-zA-Z ]+[a-zA-Z]$">
+                                  <div *ngIf="lastname.touched || f.submitted" class="text text-danger">
+                                    <ng-template [ngIf]="lastname.errors?.required">
+                                      {{'last-name-required' | translate}}
+                                    </ng-template>
+                                    <ng-template [ngIf]="lastname.errors?.pattern">
+                                      {{'last-name'|translate}} {{'must-be-aphabetes'|translate}}
+                                    </ng-template>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="col-sm">
+                              <label for="birthday">{{'birth-date' | translate}}</label>
+                              <input type="date"  class="form-control" id="birthday" name="birthday" [(ngModel)]="form.birthday" #birthday="ngModel" placeholder="{{'birth-date' | translate}}" required> 
+                              <div *ngIf="(birthday.touched || f.submitted) && birthday.errors?.required" class="text text-danger">
+                                {{'birth-date-required' | translate}}
+                              </div>
+                            </div>
+                            <div class="col-sm">
+                              <label for="gender">{{'gender' | translate}}</label>
+                              <select class="form-control" name="gender" id="gender" [(ngModel)]="form.gender" #gender="ngModel" required>
+                                <option [ngValue]="'F'">{{'gender-female' | translate}}</option>
+                                <option [ngValue]="'M'">{{'gender-male' | translate}}</option>
+                              </select>
+                              <div *ngIf="(gender.touched || f.submitted) && gender.errors?.required" class="text text-danger">
+                                {{'gender-required' | translate}}
+                              </div>
+                            </div>
+                            <div class="col-sm">
+                              <label for="phoneNumber">{{'phone-number' | translate}}</label>
+                              <input type="text"  class="form-control" id="phoneNumber" name="phoneNumber" [(ngModel)]="form.phoneNumber" #phoneNumber="ngModel" placeholder="{{'phoneNumber' | translate}}" required pattern="[0-9]+"> 
+                              <div *ngIf="phoneNumber.touched || f.submitted" class="text text-danger">
+                                <ng-template [ngIf]="phoneNumber.errors?.required">
+                                  {{'phone-required' | translate}}
+                                </ng-template>
+                                <ng-template [ngIf]="phoneNumber.errors?.pattern">
+                                  {{'phone-number'|translate}} {{'must-be-aphabetes'|translate}}
+                                </ng-template>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-row">
+                              <div class="col-sm">
+                                  <label for="email">{{'email' | translate}}</label>
+                                  <input type="email" class="form-control" id="email" name="email" placeholder="{{'email' | translate}}" [(ngModel)]="form.email" #email="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                                  <div *ngIf="email.touched || f.submitted" class="text text-danger">
+                                    <ng-template [ngIf]="email.errors?.required">
+                                      {{'email-required' | translate}}
+                                    </ng-template>
+                                    <ng-template [ngIf]="email.errors?.pattern">
+                                      {{'email'|translate}} {{'must-be-aphabetes'|translate}}
+                                    </ng-template>
+                                  </div>
+                              </div>
+                              <div class="col-sm">
+                                  <label for="password">{{'password' | translate}}</label>
+                                  <input type="password" class="form-control" id="password" name="password" placeholder="{{'password' | translate}}" [(ngModel)]="form.password" #password="ngModel" required minlength="6">
+                                  <div *ngIf="(password.touched || f.submitted)">
+                                    <div *ngIf="password.errors?.required" class="text text-danger">{{'password-required' | translate}}</div>
+                                    <div *ngIf="password.errors?.minlength" class="text text-danger">{{'password-min-length' | translate}}</div>
+                                  </div>
+                              </div>
+                              <div class="col-sm">
+                                <label for="confirmPassword">{{'password-retype' | translate}}</label>
+                                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="{{'password-retype' | translate}}" [(ngModel)]="form.confirmPassword" #confirmPassword="ngModel" required (ngModelChange)="checkPasswords()">
+                                <div *ngIf="(confirmPassword.touched || f.submitted) && confirmPassword.errors?.required" class="text text-danger">
+                                  {{'password-required' | translate}}
+                                </div>
+                              </div>
+                          </div>
+                          <div class="form-row" style="margin-top: 5px;">
+                              <button class="btn btn-solid">{{'create-account' | translate}}</button>
+                              <div *ngIf="f.submitted && isSignUpFailed" class="text text-danger">
+                                  {{'register-failed' | translate}}: {{errorMessage}}
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>
+    <!--Section ends-->
+</ng-template>

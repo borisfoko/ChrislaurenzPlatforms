@@ -1,0 +1,98 @@
+<div class="page-title">
+  <h2>{{'my-account' | translate}}</h2>
+</div>
+<div class="welcome-msg">
+  <p><strong>{{'my-account-manage' | translate}}</strong></p>
+</div>
+<div class="register-page section-b-space" *ngIf="isAccountDataSaved; else ShowAccountForm">
+  <div class="container">
+    <div class="col-lg-12">
+      <div class="row">
+        <div class="theme-card">
+          <div class="alert alert-success">
+            <strong>{{'my-account-success' | translate}}</strong>
+          </div>
+          <h6 class="title-font">{{'my-account-success' | translate}}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #ShowAccountForm>
+    <!-- section start -->
+    <section class="register-page section-b-space">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12">
+                  <div class="theme-card">
+                      <form class="theme-form" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                          <div class="form-row">
+                            <div class="col-sm">
+                                <label for="firstname">{{'first-name' | translate}}</label>
+                                <input type="text" class="form-control" id="firstname" name ="firstname" [(ngModel)]="form.firstname" #firstname="ngModel" placeholder="{{'first-name' | translate}}" required>
+                                <div *ngIf="!(firstname.valid || (firstname.pristine && !f.submitted))">
+                                  <div *ngIf="firstname.errors?.required" class="text text-danger">{{'first-name-required' | translate}}</div>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <label for="middlename">{{'middle-name' | translate}}</label>
+                                <input type="text" class="form-control" id="middlename" name ="middlename" [(ngModel)]="form.middlename" #middlename="ngModel" placeholder="{{'middle-name' | translate}}">
+                            </div>
+                            <div class="col-sm">
+                                <label for="lastname">{{'last-name' | translate}}</label>
+                                <input type="text" class="form-control" id="lastname" name ="lastname" [(ngModel)]="form.lastname" #lastname="ngModel" placeholder="{{'last-name' | translate}}" required>
+                                <div *ngIf="!(lastname.valid || (lastname.pristine && !f.submitted))">
+                                  <div *ngIf="lastname.errors?.required" class="text text-danger">{{'last-name-required' | translate}}</div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="col-sm">
+                              <label for="birthday">{{'birth-date' | translate}}</label>
+                              <input type="date"  class="form-control" id="birthday" name="birthday" [(ngModel)]="form.birthday" #birthday="ngModel" placeholder="{{'birth-date' | translate}}"  required> 
+                              <div *ngIf="!(birthday.valid || (birthday.pristine && !f.submitted))">
+                                <div *ngIf="birthday.errors?.required" class="text text-danger">{{'birth-date-required' | translate}}</div>
+                              </div>
+                            </div>
+                            <div class="col-sm">
+                              <label for="gender">{{'gender' | translate}}</label>
+                              <select class="form-control" name="gender" id="gender" [(ngModel)]="form.gender" #gender="ngModel" required>
+                                <option [ngValue]="'F'">{{'gender-female' | translate}}</option>
+                                <option [ngValue]="'M'">{{'gender-male' | translate}}</option>
+                              </select>
+                              <div *ngIf="!(gender.valid || (gender.pristine && !f.submitted))">
+                                <div *ngIf="gender.errors?.required" class="text text-danger">{{'gender-required' | translate}}</div>
+                              </div>
+                            </div>
+                            <div class="col-sm">
+                              <label for="phoneNumber">{{'phone-number' | translate}}</label>
+                              <input type="text"  class="form-control" id="phoneNumber" name="phoneNumber" [(ngModel)]="form.phoneNumber" #phoneNumber="ngModel" placeholder="{{'phoneNumber' | translate}}"  required> 
+                              <div *ngIf="!(phoneNumber.valid || (phoneNumber.pristine && !f.submitted))">
+                                <div *ngIf="phoneNumber.errors?.required" class="text text-danger">{{'phone-required' | translate}}</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="col-sm">
+                                <label for="email">{{'email' | translate}}</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="{{'email' | translate}}" [attr.disabled]="true" [(ngModel)]="form.email" #email="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                                <div *ngIf="f.submitted && (email.invalid || (email.errors?.pattern))">
+                                  <div class="text text-danger">{{'email-required' | translate}}</div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="form-row" style="margin-top: 5px;">
+                            <button class="btn btn-solid">{{'save-change' | translate}}</button>
+                            <div *ngIf="f.submitted && isAccountDataSaved" class="text text-danger">
+                                {{'my-account-failed' | translate}}
+                            </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>
+    <!--Section ends-->
+</ng-template>

@@ -1,0 +1,15 @@
+<ng-template [ngIf]="authority === 'visitor' || authority === 'user'">
+	<app-header-one></app-header-one>
+	<div> <!-- Left sidebar menu only -->
+		<router-outlet></router-outlet>
+		<app-footer-one></app-footer-one>
+	</div>
+</ng-template>
+
+<ng-template [ngIf]="authority === 'pm'">
+	Logged as Pm
+</ng-template>
+
+<ng-template [ngIf]="authority === 'admin'">
+	Logged as Admin
+</ng-template>

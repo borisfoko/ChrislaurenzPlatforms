@@ -1,0 +1,138 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ShopRoutingModule } from './shop-routing.module';
+import { SharedModule } from '../shared/shared.module';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { BarRatingModule } from "ngx-bar-rating";
+import { RangeSliderModule  } from 'ngx-rangeslider-component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { NgxPayPalModule } from 'ngx-paypal';
+import { PinchZoomModule } from 'ngx-pinch-zoom';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+
+// Home-one components
+import { HomeComponent } from './home/home.component';
+import { ContactComponent } from './home/contact/contact.component';
+import { LoginComponent } from './home/login/login.component';
+import { RegisterComponent } from './home/register/register.component';
+import { VerificationComponent } from './home/verification/verification.component';
+import { ResetPasswordComponent } from './home/reset-password/reset-password.component';
+import { DashboardComponent } from './home/dashboard/dashboard.component';
+import { AccountManagementComponent } from './home/dashboard/account-management/account-management.component';
+import { SliderComponent } from './home/slider/slider.component';
+import { CollectionBannerComponent } from './home/collection-banner/collection-banner.component';
+import { ProductSliderComponent } from './home/product-slider/product-slider.component';
+import { ParallaxBannerComponent } from './home/parallax-banner/parallax-banner.component';
+import { ProductTabComponent } from './home/product-tab/product-tab.component';
+import { ServicesComponent } from './home/services/services.component';
+import { BlogComponent } from './home/blog/blog.component';
+import { InstagramComponent } from './home/instagram/instagram.component';
+import { LogoComponent } from './home/logo/logo.component';
+// Products Components 
+import { ProductComponent } from './product/product.component';
+import { ProductBoxComponent } from './product/product-box/product-box.component';
+import { ProductBoxHoverComponent } from './product/product-box-hover/product-box-hover.component';
+import { ProductBoxVerticalComponent } from './product/product-box-vertical/product-box-vertical.component';
+import { ProductBoxMetroComponent } from './product/product-box-metro/product-box-metro.component';
+import { CollectionLeftSidebarComponent } from './product/collection/collection-left-sidebar/collection-left-sidebar.component';
+import { ColorComponent } from './product/collection/filter/color/color.component';
+import { BrandComponent } from './product/collection/filter/brand/brand.component';
+import { PriceComponent } from './product/collection/filter/price/price.component';
+import { ProductLeftSidebarComponent } from './product/product-details/product-left-sidebar/product-left-sidebar.component';
+import { RelatedProductsComponent } from './product/product-details/related-products/related-products.component';
+import { SidebarComponent } from './product/product-details/sidebar/sidebar.component';
+import { CategoriesComponent } from './product/widgets/categories/categories.component';
+import { QuickViewComponent } from './product/widgets/quick-view/quick-view.component';
+import { ModalCartComponent } from './product/widgets/modal-cart/modal-cart.component';
+import { NewProductComponent } from './product/widgets/new-product/new-product.component';
+import { SearchComponent } from './product/search/search.component';
+import { ProductCompareComponent } from './product/product-compare/product-compare.component';
+import { WishlistComponent } from './product/wishlist/wishlist.component';
+import { CartComponent } from './product/cart/cart.component';
+import { CheckoutComponent } from './product/checkout/checkout.component';
+import { SuccessComponent } from './product/success/success.component';
+import { ExitPopupComponent } from './product/widgets/exit-popup/exit-popup.component';
+import { AgeVerificationComponent } from './product/widgets/age-verification/age-verification.component';
+import { NewsletterComponent } from './product/widgets/newsletter/newsletter.component';
+import { ChangePasswordMangementComponent } from './home/dashboard/change-password-mangement/change-password-mangement.component';
+import { AddressMangementComponent } from './home/dashboard/address-mangement/address-mangement.component';
+import { OrderMangementComponent } from './home/dashboard/order-mangement/order-mangement.component';
+import { PaymentMethodMangementComponent } from './home/dashboard/payment-method-mangement/payment-method-mangement.component';
+import { NotfoundComponent } from './home/notfound/notfound.component';
+import { AboutUsComponent } from './home/about-us/about-us.component';
+import { FaqComponent } from './home/faq/faq.component';
+import { OrderSuccessComponent } from './product/order-success/order-success.component';
+
+@NgModule({
+  exports: [ExitPopupComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ShopRoutingModule,
+    SharedModule,
+    SlickCarouselModule,
+    BarRatingModule,
+    RangeSliderModule,
+    InfiniteScrollModule,
+    NgxPayPalModule,
+    PinchZoomModule,
+    Ng2SmartTableModule
+  ],
+  declarations: [
+    // Home 
+    HomeComponent,
+    LoginComponent,
+    RegisterComponent,
+    VerificationComponent,
+    ResetPasswordComponent,
+    SliderComponent,
+    CollectionBannerComponent,
+    ProductSliderComponent,
+    ParallaxBannerComponent,
+    ProductTabComponent,
+    ServicesComponent,
+    BlogComponent,
+    InstagramComponent,
+    LogoComponent,
+    DashboardComponent,
+    AccountManagementComponent,
+    // Product
+    ProductComponent,
+    ProductBoxComponent,
+    ProductBoxHoverComponent,
+    ProductBoxVerticalComponent,
+    ProductBoxMetroComponent,
+    CollectionLeftSidebarComponent,
+    ColorComponent,
+    BrandComponent,
+    PriceComponent,
+    ProductLeftSidebarComponent,
+    RelatedProductsComponent,
+    SidebarComponent,
+    CategoriesComponent,
+    QuickViewComponent,
+    ModalCartComponent,
+    NewProductComponent,
+    SearchComponent,
+    ProductCompareComponent,
+    WishlistComponent,
+    CartComponent,
+    CheckoutComponent,
+    SuccessComponent,
+    ExitPopupComponent,
+    AgeVerificationComponent,
+    NewsletterComponent,
+    ChangePasswordMangementComponent,
+    AddressMangementComponent,
+    OrderMangementComponent,
+    PaymentMethodMangementComponent,
+    ContactComponent,
+    NotfoundComponent,
+    AboutUsComponent,
+    FaqComponent,
+    OrderSuccessComponent
+  ]
+})
+export class ShopModule { }

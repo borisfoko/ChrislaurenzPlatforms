@@ -1,0 +1,109 @@
+<!-- breadcrumb start -->
+<div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="page-title">
+                    <h2>{{'contact' | translate}}</h2>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a [routerLink]="'/'">{{'home' | translate}}</a></li>
+                        <li class="breadcrumb-item active">{{'contact' | translate}}</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb End -->
+<!--section start-->
+<section class=" contact-page section-b-space">
+    <div class="container">
+        <div class="row section-b-space">
+            <div class="col-lg-7 map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31482.59110977212!2d13.424382031929044!3d52.44613004730089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8458b312a13cd%3A0x3033709913e2f96a!2sBezirk%20Neuk%C3%B6lln%2C%20Berlin%2C%20Deutschland!5e0!3m2!1sde!2sin!4v1582939341011!5m2!1sde!2sin" allowfullscreen=""></iframe>
+            </div>
+            <div class="col-lg-5">
+                <div class="contact-right">
+                    <ul>
+                        <li>
+                            <div class="contact-icon">
+                                <img  src="assets/images/icon/phone.png" alt="{{'call-us' | translate}}">
+                                <h6>{{'call-us' | translate}}</h6>
+                            </div>
+                            <div class="media-body">
+                                <p>+49 123 - 456 - 7890</p>
+                                <p>+49 163 - 451 - 7894</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <h6>{{'address' | translate}}</h6>
+                            </div>
+                            <div class="media-body">
+                                <p>Warthestraße 73, 12051 Berlin</p>
+                                <p>{{'germany' | translate}}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon">
+                                <img  src="assets/images/icon/email.png" alt="{{'email-us' | translate}}">
+                                <h6>{{'email-us' | translate}}</h6>
+                            </div>
+                            <div class="media-body">
+                                <p>Support@chrislaurenz.de</p>
+                                <p>info@chrislaurenz.de</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon">
+                                <i class="fa fa-fax" aria-hidden="true"></i>
+                                <h6>Fax</h6>
+                            </div>
+                            <div class="media-body">
+                                <p>Support@chrislaurenz.de</p>
+                                <p>info@chrislaurenz.de</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <form class="theme-form">
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <label for="name">{{'first-name' | translate}}</label>
+                            <input type="text" class="form-control" id="name" placeholder="{{'first-name' | translate}}" required="">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email">{{'last-name' | translate}}</label>
+                            <input type="text" class="form-control" id="last-name" placeholder="{{'last-name' | translate}}" required="">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="review">{{'phone-number' | translate}}</label>
+                            <input type="text" class="form-control" id="review" placeholder="{{'phone-number' | translate}}" required="">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email">{{'email' | translate}}</label>
+                            <input type="text" class="form-control" id="email" placeholder="{{'email' | translate}}" required="">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="review">{{'write-message' | translate}}</label>
+                            <textarea class="form-control" placeholder="{{'write-message' | translate}}" id="message" rows="6"></textarea>
+                        </div>
+                        <div class="col-md-12">
+                            <button class="btn btn-solid" type="submit">{{'form-send' | translate}}</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Section ends-->

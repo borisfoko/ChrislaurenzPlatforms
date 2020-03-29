@@ -1,0 +1,27 @@
+<div class="footer-title">
+    <h4>{{'category' | translate }}</h4>
+</div>
+<div class="footer-contant">
+    <ul>
+        <li *ngFor="let productCategory of productCategories">
+            <a *ngIf="productCategory.name.includes('Women')" [routerLink]="['/collection', productsService.getCurrentTranslation(productCategory.name)]">
+                {{'women-fashion-full' | translate}}
+            </a>
+            <a *ngIf="productCategory.name.includes('Men')" [routerLink]="['/collection', productsService.getCurrentTranslation(productCategory.name)]">
+                {{'mens-fashion-full' | translate}}
+            </a>
+            <a *ngIf="productCategory.name.includes('Girl')" [routerLink]="['/collection', productsService.getCurrentTranslation(productCategory.name)]">
+                {{'girls-fashion-full' | translate}}
+            </a>
+            <a *ngIf="productCategory.name.includes('Boy')" [routerLink]="['/collection', productsService.getCurrentTranslation(productCategory.name)]">
+                {{'boys-fashion-full' | translate}}
+            </a>
+            <a *ngIf="productCategory.name.includes('Kid')" [routerLink]="['/collection', productsService.getCurrentTranslation(productCategory.name)]">
+                {{'kids-fashion-full' | translate}}
+            </a>
+            <a *ngIf="productCategory.name.includes('All')" [routerLink]="'/collection/all'">
+                {{'all-fashion-full' | translate}}
+            </a>
+        </li>
+    </ul>
+</div>
