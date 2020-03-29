@@ -6,12 +6,19 @@ Rest API, User and Admin Back- and Frontend
 ```bash
 git clone https://github.com/borisfoko/ChrislaurenzPlatforms.git
 
+```
+
 ### Chrislaurenz User Frontend
+
+```bash
 cd chrislaurenz
 npm install
 npm start
+```
 
 ### Chrislaurenz Rest API Backend
+
+```bash
 cd chrislaurenz-server
 npm install
 npm start
