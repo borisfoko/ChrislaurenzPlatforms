@@ -18,6 +18,13 @@ cd chrislaurenz
 npm install
 npm start
 ```
+### Chrislaurenz Admin Frontend
+
+```bash
+cd chrislaurenz-admin
+npm install
+npm start
+```
 
 ### Chrislaurenz Rest API Backend
 
