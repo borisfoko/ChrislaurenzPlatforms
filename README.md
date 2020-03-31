@@ -1,15 +1,18 @@
 # ChrislaurenzPlatforms
 Rest API, User and Admin Back- and Frontend
 
-## read about Angular 
+## Get started with node.js
+https://nodejs.org/en/
+
+## Read more about Angular 
 https://angular.io/tutorial
 
 ## Getting started
 
 ```bash
 git clone https://github.com/borisfoko/ChrislaurenzPlatforms.git
-
 ```
+## Setup & start apps
 
 ### Chrislaurenz User Frontend
 
