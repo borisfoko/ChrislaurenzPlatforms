@@ -1,6 +1,9 @@
 # ChrislaurenzPlatforms
 Rest API, User and Admin Back- and Frontend
 
+## read about Angular 
+https://angular.io/tutorial
+
 ## Getting started
 
 ```bash
