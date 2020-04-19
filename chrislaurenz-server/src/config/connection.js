@@ -1,8 +1,8 @@
 const connection = {
   host     : 'localhost',
-  username : 'bkfgoalAdmin',
+  username : 'k123354_bkfgoal',
   password : 'CompanyLeonidasDanceParaphTools1629',
-  database : 'chrislaurenz',
+  database : 'k123354_chrislaurenz',
   dialect: 'mysql'
 };
 
