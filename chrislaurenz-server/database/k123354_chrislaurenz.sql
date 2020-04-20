@@ -1678,7 +1678,7 @@ DELIMITER $$
 --
 -- Ereignisse
 --
-DROP EVENT `expire_token`$$
+DROP EVENT IF EXISTS `expire_token`$$
 CREATE DEFINER=`k123354_bkfgoal`@`%` 
 	EVENT `expire_token` 
 	ON SCHEDULE EVERY 1 DAY STARTS CURRENT_TIMESTAMP 
