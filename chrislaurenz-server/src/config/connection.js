@@ -14,4 +14,5 @@ const prodConnection = {
   dialect: 'mysql'
 };
 
-module.exports = prodConnection;
+// Change this config to prodConnection for the production environment
+module.exports = connection;
