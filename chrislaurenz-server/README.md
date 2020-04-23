@@ -31,8 +31,10 @@ Url: https://www.apachefriends.org/index.html
   previous step and click on the "Go" button on the bottom of the page
   Now you have your database configure. Database name: k123354_chrislaurenz, Username: k123354_bkfgoal, Password: CompanyLeonidasDanceParaphTools1629
 ```
+## 4. Database connection setting
+Change the default database connection setting in the connection.js under \src\config\connection.js from "prodConnection" to "connection" and save the changes
 
-## 4. Now you can start the backend application (Chrislaurenz-Server)
+## 5. Now you can start the backend application (Chrislaurenz-Server)
 
 ```bash
 cd chrislaurenz-server
@@ -40,7 +42,7 @@ npm install
 npm start
 ```
   
-## 5. Explore the API
+## 6. Explore the API
 
 ```bash
 - http://localhost:8000/api/product
