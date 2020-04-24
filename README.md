@@ -8,7 +8,7 @@ https://nodejs.org/en/
 https://angular.io/tutorial
 
 ## Getting started
-
+ 
 ```bash
 git clone https://github.com/borisfoko/ChrislaurenzPlatforms.git
 ```
