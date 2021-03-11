@@ -1,4 +1,6 @@
 # ChrislaurenzPlatforms
+E-Commerce Platform ChrisLaurenz with Front- (Client, and Admin) & Backend in Angular and Nodejs (Express)
+This tool integrate online payment workflows to PayPal and Stripe
 Rest API, User and Admin Back- and Frontend
 
 ## Get started with node.js
